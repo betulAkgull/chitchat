@@ -22,16 +22,25 @@ class SendCodeFragment : Fragment(R.layout.fragment_send_code) {
         with(binding) {
             ccp.setDefaultCountryUsingNameCode(Locale.getDefault().country)
             ccp.resetToDefaultCountry()
+            ccp.registerCarrierNumberEditText(etPhoneNumber)
 
-            ccp.setOnCountryChangeListener {
-                val countryName = ccp.selectedCountryName
-                val countryCode = ccp.selectedCountryCode
 
-                Toast.makeText(
-                    requireContext(),
-                    "$countryCode,$countryName",
-                    Toast.LENGTH_SHORT
-                ).show()
+            btnSendCode.setOnClickListener {
+                if (ccp.isValidFullNumber) {
+                    Toast.makeText(
+                        requireContext(),
+                        ccp.formattedFullNumber,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "Please enter valid phone number",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    etPhoneNumber.requestFocus()
+                }
+
             }
         }
 

@@ -55,6 +55,8 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:hint="@string/phoneNumber"
+        android:maxLines="1"
+        android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="@+id/ccp"
         app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
         app:layout_constraintStart_toEndOf="@+id/ccp"
