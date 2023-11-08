@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">chatapp</string>
     <string name="welcomeToChitChat">Welcome To ChitChat</string>
     <string name="sendCode">send code</string>
-    <string name="phoneNumber" translatable="false">+90 --- --- -- --</string>
+    <string name="phoneNumber" translatable="false">--- --- -- --</string>
     <string name="phoneNumberXX" translatable="false">--- ---</string>
     <string name="signIn">sign in</string>
     <string name="enter_sms_code">enter sms code</string>

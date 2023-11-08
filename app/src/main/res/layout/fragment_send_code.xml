@@ -25,29 +25,41 @@
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_phone_number"
+        app:layout_constraintBottom_toTopOf="@+id/ccp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/ccp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:ccpDialog_backgroundColor="@color/white"
+        app:ccpDialog_textColor="@color/darkBlue"
+        app:ccp_arrowColor="@color/white"
+        app:ccp_autoDetectLanguage="true"
+        app:ccp_contentColor="@color/white"
+        app:ccp_showFlag="false"
+        app:layout_constraintBottom_toTopOf="@+id/roundableLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tv_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
+
     <EditText
         android:id="@+id/et_phone_number"
         style="@style/editText"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:autofillHints="phone"
+        android:layout_marginStart="10dp"
         android:hint="@string/phoneNumber"
-        android:maxLength="11"
-        android:textColor="@color/white"
-        android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/roundableLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/ccp"
         app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/tv_welcome"
-        app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
+        app:layout_constraintStart_toEndOf="@+id/ccp"
+        app:layout_constraintTop_toTopOf="@+id/ccp" />
+
 
     <com.tistory.zladnrms.roundablelayout.RoundableLayout
         android:id="@+id/roundableLayout"
@@ -56,9 +68,9 @@
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/et_phone_number"
-        app:layout_constraintStart_toStartOf="@+id/et_phone_number"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone_number">
+        app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
+        app:layout_constraintStart_toStartOf="@+id/tv_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/ccp">
 
         <Button
             android:id="@+id/btn_send_code"
