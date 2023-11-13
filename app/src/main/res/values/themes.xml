@@ -26,11 +26,13 @@
         <item name="android:textSize">48sp</item>
         <item name="android:fontFamily">"sans-serif-medium"</item>
         <item name="android:gravity">center_vertical</item>
+        <item name="elevation">20dp</item>
     </style>
 
     <style name="button" parent="Theme.Chatapp">
         <item name="android:textColor">@color/darkBlue</item>
         <item name="backgroundTint">@color/white</item>
+        <item name="hintTextColor">@color/darkBlue</item>
         <item name="android:textSize">20sp</item>
         <item name="cornerLeftSide">20dp</item>
         <item name="cornerRightSide">20dp</item>
@@ -39,7 +41,9 @@
 
     <style name="buttonHint" parent="Theme.Chatapp">
         <item name="hintTextColor">@color/darkBlue</item>
+        <item name="android:textColor">@color/darkBlue</item>
         <item name="android:textSize">20sp</item>
+        <item name="elevation">20dp</item>
         <item name="android:fontFamily">"sans-serif-medium"</item>
         <item name="android:gravity">center</item>
     </style>
