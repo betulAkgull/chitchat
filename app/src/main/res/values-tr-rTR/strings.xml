@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">chatapp</string>
+    <string name="app_name">ChitChat</string>
     <string name="welcomeToChitChat">ChitChat\'e Hoşgeldin</string>
     <string name="sendCode">kod gönder</string>
     <string name="signIn">giriş yap</string>

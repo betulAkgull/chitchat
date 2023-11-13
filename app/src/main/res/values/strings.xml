@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">chatapp</string>
+    <string name="app_name" translatable="false">ChitChat</string>
     <string name="welcomeToChitChat">Welcome To ChitChat</string>
     <string name="sendCode">send code</string>
     <string name="phoneNumber" translatable="false">--- --- -- --</string>

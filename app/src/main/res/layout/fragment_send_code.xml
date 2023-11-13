@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="logo.json"/>
+        app:lottie_fileName="logo.json" />
 
     <TextView
         android:id="@+id/tv_welcome"
@@ -55,6 +55,7 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
+        android:autofillHints="phone"
         android:hint="@string/phoneNumber"
         android:inputType="phone"
         android:maxLines="1"

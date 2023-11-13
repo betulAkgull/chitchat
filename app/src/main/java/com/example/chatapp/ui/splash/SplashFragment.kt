@@ -19,7 +19,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-            Handler().postDelayed(Runnable {
+            Handler().postDelayed({
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToSendCodeFragment())
             }, 4000)
         }
