@@ -5,4 +5,5 @@
     <string name="sendCode">kod gönder</string>
     <string name="signIn">giriş yap</string>
     <string name="enter_sms_code">sms kodunu gir</string>
+    <string name="login">giriş yap</string>
 </resources>

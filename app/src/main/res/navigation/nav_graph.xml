@@ -9,10 +9,17 @@
         android:id="@+id/loginFragment"
         android:name="com.example.chatapp.ui.login.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+        <argument
+            android:name="authCredential"
+            app:argType="com.example.chatapp.data.PhoneAuthCredentialArgs" />
+        <action
+            android:id="@+id/loginToHome"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sendCodeFragment"
-        android:name="com.example.chatapp.ui.login.SendCodeFragment"
+        android:name="com.example.chatapp.ui.sendcode.SendCodeFragment"
         android:label="SendCodeFragment"
         tools:layout="@layout/fragment_send_code">
         <action
@@ -28,4 +35,9 @@
             android:id="@+id/action_splashFragment_to_sendCodeFragment"
             app:destination="@id/sendCodeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.chatapp.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
 </navigation>
