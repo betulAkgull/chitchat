@@ -10,4 +10,5 @@
     <string name="chitchat" translatable="false">ChitChat</string>
     <string name="login">login</string>
     <string name="resend_code"><u>did not get the code? resend</u></string>
+    <string name="logout">logout</string>
 </resources>

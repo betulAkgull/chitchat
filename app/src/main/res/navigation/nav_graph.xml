@@ -34,10 +34,17 @@
         <action
             android:id="@+id/action_splashFragment_to_sendCodeFragment"
             app:destination="@id/sendCodeFragment" />
+        <action
+            android:id="@+id/splashToHome"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.chatapp.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/homeToSplash"
+            app:destination="@id/splashFragment" />
+    </fragment>
 </navigation>

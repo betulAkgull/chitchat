@@ -63,6 +63,7 @@ class LoginViewModel @Inject constructor(
     }
 
     fun resendVerificationCode(phone: String, activity: Activity) {
+        _loginState.value = LoginState.Loading
         val options =
             PhoneAuthOptions.newBuilder(FirebaseAuth.getInstance()).setPhoneNumber(phone)
                 .setTimeout(60L, TimeUnit.SECONDS)
