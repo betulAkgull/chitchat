@@ -11,8 +11,8 @@
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <argument
-            android:name="authCredential"
-            app:argType="com.example.chatapp.data.PhoneAuthCredentialArgs" />
+            android:name="phoneNumber"
+            app:argType="string" />
         <action
             android:id="@+id/loginToHome"
             app:destination="@id/homeFragment" />

@@ -6,4 +6,5 @@
     <string name="signIn">giriş yap</string>
     <string name="enter_sms_code">sms kodunu gir</string>
     <string name="login">giriş yap</string>
+    <string name="resend_code"><u>kodu almadınız mı? tekrar gönder</u></string>
 </resources>

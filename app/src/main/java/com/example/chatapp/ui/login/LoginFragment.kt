@@ -2,6 +2,7 @@ package com.example.chatapp.ui.login
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -11,6 +12,7 @@ import com.example.chatapp.common.gone
 import com.example.chatapp.common.viewBinding
 import com.example.chatapp.common.visible
 import com.example.chatapp.databinding.FragmentLoginBinding
+import com.google.firebase.auth.PhoneAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -30,8 +32,17 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         with(binding) {
 
+            viewModel.sendOtp(args.phoneNumber, false, requireActivity())
+
             btnSendCode.setOnClickListener {
-                viewModel.signInWithPhone(args.authCredential.phoneAuthCredential)
+                val enteredOtp = etPhoneNumber.text.toString().trim()
+                val credential =
+                    PhoneAuthProvider.getCredential(viewModel.mVerificationId, enteredOtp)
+                viewModel.signInWithPhone(credential)
+            }
+
+            tvResendCode.setOnClickListener {
+                viewModel.sendOtp(args.phoneNumber, true, requireActivity())
             }
         }
     }
@@ -50,8 +61,31 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     findNavController().navigate(LoginFragmentDirections.loginToHome())
                 }
 
+                is LoginState.AuthCredential -> {
+                    lottieProgressBar.gone()
+                    viewModel.signInWithPhone(state.authCredential)
+                }
+
+                is LoginState.Data -> {
+                    lottieProgressBar.gone()
+                    if (state.codeSent) {
+                        Toast.makeText(requireContext(), "Code Sent!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(
+                            requireContext(),
+                            "Failed at sending code",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
                 is LoginState.Error -> {
                     lottieProgressBar.gone()
+                    Toast.makeText(
+                        requireContext(),
+                        state.throwable.message.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             }
